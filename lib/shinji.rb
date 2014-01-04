@@ -24,7 +24,7 @@ module Shinji
 
   def to_shinji(str)
     # 旧字・新字リストファイルを読み込んでいないならば、読み込み処理を行う
-    load_shinji_list if @@shin_kanji.nil? && @@kyu_kanji.nil?
+    load_kanji_list if @@shin_kanji.nil? && @@kyu_kanji.nil?
 
     # 新字を旧字に変換する
     str.tr(@@kyu_kanji, @@shin_kanji)
@@ -32,13 +32,13 @@ module Shinji
 
   def to_kyuji(str)
     # 旧字・新字リストファイルを読み込んでいないならば、読み込み処理を行う
-    load_shinji_list if @@shin_kanji.nil? && @@kyu_kanji.nil?
+    load_kanji_list if @@shin_kanji.nil? && @@kyu_kanji.nil?
 
     # 旧字を新字に変換する
     str.tr(@@shin_kanji, @@kyu_kanji)
   end
 
-  def load_shinji_list
+  def load_kanji_list
     # 旧字・新字リストファイルの読み込み処理
     File.open("#{CONFIG_DIR}/#{KANJI_LIST_FILE}") do |file|
       file_data = file.read.split("\n")
