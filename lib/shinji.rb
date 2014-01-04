@@ -13,12 +13,18 @@ module Shinji
   module_function
 
   def to_shinji(str)
-    shinji_list = File.open("#{CONFIG_DIR}/shinji_list") do |file|
+    shin_kanji = nil
+    kyu_kanji = nil
+
+    File.open("#{CONFIG_DIR}/shinji_list") do |file|
       file_data = file.read.split("\n")
       file_data.map! { |str| str.delete("\s").split(":") }
-      file_data.to_h
+      kyu_kanji, shin_kanji = file_data.transpose
     end
 
-    str.gsub(/./, shinji_list)
+    shin_kanji = shin_kanji.join
+    kyu_kanji = kyu_kanji.join
+
+    str.tr(kyu_kanji, shin_kanji)
   end
 end
