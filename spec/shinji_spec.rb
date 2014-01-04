@@ -15,4 +15,18 @@ describe "String" do
       end
     end
   end
+
+  describe "#kyuji" do
+    context "文字列に新字が含まれるとき" do
+      it "新字を旧字に変換した文字列を返すこと" do
+        str = "稲飲隠営栄衛駅学広"
+        expect(str.kyuji).to eq "稻飮隱營榮衞驛學廣"
+      end
+
+      it "旧字ではない文字は変換しないこと" do
+        str = "テスト東京大学"
+        expect(str.kyuji).to eq "テスト東京大學"
+      end
+    end
+  end
 end
