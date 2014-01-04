@@ -23,16 +23,14 @@ module Shinji
   module_function
 
   def to_shinji(str)
-    # 旧字・新字リストファイルを読み込んでいないならば、読み込み処理を行う
-    load_kanji_list if @@shin_kanji.nil? && @@kyu_kanji.nil?
+    load_kanji_list unless loaded_kanji_list?
 
     # 新字を旧字に変換する
     str.tr(@@kyu_kanji, @@shin_kanji)
   end
 
   def to_kyuji(str)
-    # 旧字・新字リストファイルを読み込んでいないならば、読み込み処理を行う
-    load_kanji_list if @@shin_kanji.nil? && @@kyu_kanji.nil?
+    load_kanji_list unless loaded_kanji_list?
 
     # 旧字を新字に変換する
     str.tr(@@shin_kanji, @@kyu_kanji)
@@ -45,5 +43,9 @@ module Shinji
       file_data.map! { |str| str.delete("\s").split(":") }
       @@kyu_kanji, @@shin_kanji = file_data.transpose.map(&:join)
     end
+  end
+
+  def loaded_kanji_list?
+    @@shin_kanji && @@kyu_kanji
   end
 end
