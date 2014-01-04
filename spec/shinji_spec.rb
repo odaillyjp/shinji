@@ -1,3 +1,4 @@
+#conding: utf-8
 require 'rspec'
 require 'shinji'
 
