@@ -43,9 +43,7 @@ module Shinji
     File.open("#{CONFIG_DIR}/#{KANJI_LIST_FILE}") do |file|
       file_data = file.read.split("\n")
       file_data.map! { |str| str.delete("\s").split(":") }
-      kyu_kanji, shin_kanji = file_data.transpose
-      @@kyu_kanji = kyu_kanji.join
-      @@shin_kanji = shin_kanji.join
+      @@kyu_kanji, @@shin_kanji = file_data.transpose.map(&:join)
     end
   end
 end
