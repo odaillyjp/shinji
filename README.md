@@ -1,29 +1,33 @@
-# Shinji
+# ライブラリ Shinji 概要
 
-TODO: Write a gem description
+旧漢字と新漢字の相互変換を行う機能を追加するライブラリです。
 
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'shinji'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+## インストール
 
     $ gem install shinji
 
-## Usage
+## 追加されるメソッド
 
-TODO: Write usage instructions here
+- String#shinji
+文字列の中に含まれる旧漢字を新漢字に変換した文字列を返します。
+- String#kyuji
+文字列の中に含まれる新漢字を旧漢字に変換した文字列を返します
 
-## Contributing
+## 使用例
 
-1. Fork it ( http://github.com/<my-github-username>/shinji/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+``ruby
+require 'shinji'
+
+puts "舊漢字を新漢字に變換します。".shinji
+# => 旧漢字を新漢字に変換します。
+puts "旧漢字を新漢字に変換します。".kyuji
+# => 舊漢字を新漢字に變換します。
+``
+
+## 参考
+
+旧漢字と新漢字については、以下の資料を参考しています。  
+  
+「常用漢字表」（平成22年内閣告示第2号）  
+[http://www.bunka.go.jp/kokugo_nihongo/kokujikunrei_h221130.html](http://www.bunka.go.jp/kokugo_nihongo/kokujikunrei_h221130.html)
+
