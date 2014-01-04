@@ -23,6 +23,7 @@ module Shinji
   module_function
 
   def to_shinji(str)
+    # 旧字・新字リストファイルを読み込んでいないならば、読み込み処理を行う
     load_shinji_list if @@shin_kanji.nil? && @@kyu_kanji.nil?
 
     # 新字を旧字に変換する
@@ -30,6 +31,7 @@ module Shinji
   end
 
   def to_kyuji(str)
+    # 旧字・新字リストファイルを読み込んでいないならば、読み込み処理を行う
     load_shinji_list if @@shin_kanji.nil? && @@kyu_kanji.nil?
 
     # 旧字を新字に変換する
