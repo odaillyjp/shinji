@@ -13,6 +13,7 @@ end
 
 module Shinji
   CONFIG_DIR = File.expand_path('../../config', __FILE__)
+  KANJI_LIST_FILE = 'kanji_list'
 
   @@shin_kanji = nil
   @@kyu_kanji = nil
@@ -32,7 +33,7 @@ module Shinji
   end
 
   def load_shinji_list
-    File.open("#{CONFIG_DIR}/shinji_list") do |file|
+    File.open("#{CONFIG_DIR}/#{KANJI_LIST_FILE}") do |file|
       file_data = file.read.split("\n")
       file_data.map! { |str| str.delete("\s").split(":") }
       kyu_kanji, shin_kanji = file_data.transpose
