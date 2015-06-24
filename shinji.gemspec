@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["ourqwers@gmail.com"]
   spec.summary       = %q{shinji}
   spec.description   = %q{shinji}
-  spec.homepage      = "https://github.com/Shindo200/shinji"
+  spec.homepage      = "https://github.com/odaillyjp/shinji"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
