@@ -15,9 +15,12 @@
 
 ## 追加されるメソッド
 
-- **String#shinji**  
+- **String#shinji**
+
 文字列の中に含まれる旧漢字を新漢字に変換した文字列を返します。
-- **String#kyuji**  
+
+- **String#kyuji**
+
 文字列の中に含まれる新漢字を旧漢字に変換した文字列を返します。
 
 ## 使用例
@@ -33,8 +36,9 @@ puts "旧漢字を新漢字に変換します。".kyuji
 
 ## 参考
 
-旧漢字と新漢字については、以下の資料を参考しています。  
-  
-「常用漢字表」（平成22年内閣告示第2号）  
-[http://www.bunka.go.jp/kokugo_nihongo/kokujikunrei_h221130.html](http://www.bunka.go.jp/kokugo_nihongo/kokujikunrei_h221130.html)
+旧漢字と新漢字の対応については、以下の資料を参考にしています。
+
+「常用漢字表」（平成22年内閣告示第2号）
+
+[http://kokugo.bunka.go.jp/kokugo_nihongo/joho/kijun/naikaku/kanji/index.html](http://kokugo.bunka.go.jp/kokugo_nihongo/joho/kijun/naikaku/kanji/index.html)
 
