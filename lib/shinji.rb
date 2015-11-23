@@ -12,9 +12,7 @@ class String
 end
 
 module Shinji
-  # 旧漢字・新漢字リストが置いてあるディレクトリのパス
   CONFIG_DIR = File.expand_path('../../config', __FILE__)
-  # 旧漢字・新漢字リストファイル名
   KANJI_LIST_FILE = 'kanji_list'
 
   @@shin_kanji = nil
@@ -48,7 +46,6 @@ module Shinji
     str.tr(@@shin_kanji, @@kyu_kanji)
   end
 
-  # 旧漢字・新漢字リストファイルの読み込みとメモ化を行う
   def load_kanji_list
     File.open("#{CONFIG_DIR}/#{KANJI_LIST_FILE}") do |file|
       file_data = file.read.split("\n")
