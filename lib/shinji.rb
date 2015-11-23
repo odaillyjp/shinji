@@ -20,10 +20,11 @@ module Shinji
 
   module_function
 
-  # 旧漢字を新漢字に置換する
+  # Convert to new-style kanji.
+  # @param [String] converting chars
+  # @return [String]
   #
   # Usage:
-  #
   #   Shinji::to_kyuji('稻飮隱營榮衞驛學廣')
   #   # => 稲飲隠営栄衛駅学広
   #
@@ -33,10 +34,11 @@ module Shinji
     str.tr(@@kyu_kanji, @@shin_kanji)
   end
 
-  # 新漢字を旧漢字に置換する
+  # Convert to old-style kanji.
+  # @param [String] converting chars
+  # @return [String]
   #
   # Usage:
-  #
   #   Shinji::to_kyuji('稲飲隠営栄衛駅学広')
   #   # => 稻飮隱營榮衞驛學廣
   #
